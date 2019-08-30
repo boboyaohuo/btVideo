@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+  <view class="animation-wrapper" animation="{{animation}}">
+    <block wx:for="{{videos}}" wx:key="{{item.videoUrl}}" wx:for-index="index">
+      <view class="animation-image-wrapper">
+        <video class="video"
+          show-fullscreen-btn="{{false}}"
+          enable-play-gesture="{{true}}"
+          show-center-play-btn="{{true}}"
+          play-btn-position="center"
+          bindtimeupdate="bindtimeupdate"
+          id="{{ 'btVideo' + index }}"
+          binderror="binderror"
+          objectFit="contain"
+          src="{{item.videoUrl}}"
+          bindplay="bindplay"
+          loop="true"
+          poster="{{item.poster}}">
+        </video>
+      </view>
+    </block>
+  </view>
+  <!-- <image class="play-btn" wx:if="{{!playState && !animationShow}}" src="../../icons/play.png"></image> -->
+  <!-- <progress class="progress" percent="{{percent}}" activeColor="#ffffff" backgroundColor="#A9A9A9" stroke-width="1"  wx:if="{{!animationShow}}" /> -->
+</view>
