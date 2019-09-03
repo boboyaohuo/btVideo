@@ -35,7 +35,7 @@ Page({
 
   onLoad: function () {
     // 初始第一个视频播放
-    // wx.createVideoContext("btVideo" + this.data.videoIndex).play();
+    wx.createVideoContext("btVideo" + this.data.videoIndex).play();
     // 滑动
     this.videoChange = throttle(this.touchEndHandler, 200);
     // 绑定updateVideoIndex事件，更新当前播放视频index
